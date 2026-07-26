@@ -1,0 +1,27 @@
+# Build output
+storybook.pdf
+*.pdf
+!illustrations/*.pdf
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# Pandoc intermediates
+*.aux
+*.log
+*.out
+*.toc
+
+# Python (in case any tooling shows up later)
+__pycache__/
+*.pyc
+.venv/
+
+# Node (same)
+node_modules/

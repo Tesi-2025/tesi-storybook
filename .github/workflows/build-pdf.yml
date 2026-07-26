@@ -1,0 +1,58 @@
+name: build-pdf
+
+# Renders STORYBOOK.md → storybook.pdf on every version tag push
+# and attaches the PDF to the corresponding GitHub Release.
+#
+# Trigger:   git tag v1.0.0 && git push --tags
+# Also runs on manual workflow dispatch (any branch) — handy for testing.
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+permissions:
+  contents: write  # required to upload release artifacts
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Install pandoc + LaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            pandoc \
+            texlive-xetex \
+            texlive-fonts-recommended \
+            texlive-fonts-extra \
+            fonts-dejavu
+
+      - name: Build PDF
+        run: |
+          chmod +x scripts/build-pdf.sh
+          ./scripts/build-pdf.sh storybook.pdf
+          ls -lh storybook.pdf
+
+      - name: Upload PDF as workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: storybook-pdf
+          path: storybook.pdf
+          retention-days: 30
+
+      - name: Attach PDF to release (tag pushes only)
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: storybook.pdf
+          body: |
+            📖 *Tesi and the Great Merge Conflict* — PDF edition.
+
+            Rendered from `STORYBOOK.md` via pandoc + xelatex.
+
+            🦜 *ciao Mamma, ti voglio bene*
