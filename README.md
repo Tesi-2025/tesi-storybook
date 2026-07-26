@@ -28,6 +28,7 @@ For **Mummy** 🦒 — the best coder in the world, owner of the best GitHub acc
 | 🐭 | **Topo** | Mouse. Coloratura tenor. Puccini specialist. |
 | 🐉 | **Draghetta** | Dragon, junior. Occasionally exhales on the laptop. |
 | ❤ | **Babbo** | Dad. CTO of Donkey Shoes. Makes the espresso. |
+| 🩷 | **Dente** | Fluffy pink Labubu. Nine teeth. Chief Vibes Officer of Donkey Shoes. Speaks only in grins. |
 
 ---
 
@@ -49,6 +50,10 @@ If you'd prefer to read one chapter at a time (recommended for small people at b
 10. [Andiamo](chapters/10-andiamo.md) — The printer broke. The family runs.
 11. [Submitted](chapters/11-submitted.md) — Hoof, feather, hand, claw, paw. Press.
 12. [Ciao Mamma, Grazie](chapters/12-ciao-mamma-grazie.md) — Bedtime.
+
+**Bonus chapter (added later):**
+
+13. [Dente Arrives](chapters/13-dente-arrives.md) — A pink Labubu on the doormat. Nine teeth. One grin. Chief Vibes Officer, Donkey Shoes. 🩷🦷
 
 ---
 
